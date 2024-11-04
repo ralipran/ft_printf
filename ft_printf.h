@@ -6,7 +6,7 @@
 /*   By: ralipran <ralipran@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 14:06:42 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/31 14:18:25 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:44:07 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 void	ft_write(char c, int *count);
 void	ft_putnbr_base(unsigned long int n,
-char *str_base, int base, int *count);
-void	ft_putnbr(int nb, int *count);
+			char *str_base, int base, int *count);
+void	ft_putnbr(long nb, int *count);
 void	ft_putstr(char *str, int *count);
 void	ft_putptr(void *ptr, int *count);
 void	ft_putchar(char c, int *count);

@@ -6,7 +6,7 @@
 /*   By: ralipran <ralipran@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:27:57 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/31 14:17:33 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:59:15 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_write(char c, int *count)
 {
-	int success;
+	int	success;
 
-	if (*count != -1 )
+	if (*count != -1)
 	{
 		success = write(1, &c, 1);
 		if (success == -1)
@@ -34,11 +34,16 @@ void	ft_putnbr_base(unsigned long int n,
 	ft_write(*(str_base + (n % base)), count);
 }
 
-void	ft_putnbr(int nb, int *count)
+void	ft_putnbr(long nb, int *count)
 {
+	if (nb == INT_MIN)
+	{
+		ft_write("-2147483648", count);
+		return ;
+	}
 	if (nb < 0)
 	{
-		write (1, "-", 1);
+		ft_write('-', count);
 		ft_putnbr_base(-nb, "0123456789", 10, count);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: ralipran <ralipran@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 23:02:17 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/31 13:03:21 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:59:46 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,35 +26,39 @@ void	ft_putchar(char c, int *count)
  * 	ptr_as_nbr = (uintptr_t) ptr;
  */
 
-void	ft_which_flag(const char *str, va_list args, int *count)
+void	ft_read_flag(const char *str, va_list args, int *count)
 {
 	while (*str)
 	{
-
 		if (*str == '%')
 		{
-			str++;
-			if (*str == 'c')
-			ft_putchar (va_arg(args, int), count);
-			else if (*str == 's')
-			ft_putstr(va_arg(args, char *), count);
-			else if (*str == 'p')
-			ft_putptr(va_arg(args, void *), count);
-			else if (*str == 'd' || *str == 'i')
-			ft_putnbr(va_arg(args, int), count);
-			else if (*str == 'u')
-			ft_putnbr_base(va_arg(args, unsigned int), "0123456789", 10, count);
-			else if (*str == 'x')
-			ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef", 16, count);
-			else if (*str == 'X')
-			ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF", 16, count);
-			else if (*str == '%')
-			ft_write('%', count);
+			*str++;
+			ft_read_flag(str, args, count);
 		}
 		else
 			ft_write(*str, count);
-		str++;
+			str++;
 	}
+}
+
+void	ft_flag_treat(char flag, va_list args, int *count)
+{
+	if (flag == 'c')
+		ft_putchar (va_arg(args, int), count);
+	else if (flag == 's')
+		ft_putstr(va_arg(args, char *), count);
+	else if (flag == 'p')
+		ft_putptr(va_arg(args, void *), count);
+	else if (flag == 'd' || flag == 'i')
+		ft_putnbr(va_arg(args, int), count);
+	else if (flag == 'u')
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789", 10, count);
+	else if (flag == 'x')
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef", 16, count);
+	else if (flag == 'X')
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF", 16, count);
+	else if (flag == '%')
+		ft_write('%', count);
 }
 
 int	ft_printf(const char *input, ...)
@@ -67,4 +71,4 @@ int	ft_printf(const char *input, ...)
 	ft_which_flag(input, args, &count);
 	va_end(args);
 	return (count);
-}
+}`

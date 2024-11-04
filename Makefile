@@ -6,11 +6,11 @@
 #    By: ralipran <ralipran@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/24 14:04:12 by ralipran          #+#    #+#              #
-#    Updated: 2024/10/31 11:08:38 by ralipran         ###   ########.fr        #
+#    Updated: 2024/10/31 15:25:29 by ralipran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	ft_printf.c ft_printf_fonx_supp.c test.c
+SRCS		=	ft_printf.c ft_printf_fonx_supp.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -19,7 +19,7 @@ RM			=	rm -f
 CFLAGS		=	-Wall -Wextra -Werror
 AR			=	ar rcs
 
-NAME		=	ft_printf.a
+NAME		=	libftprintf.a
 
 all:$(NAME)
 
