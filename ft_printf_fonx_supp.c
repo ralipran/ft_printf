@@ -6,7 +6,7 @@
 /*   By: ralipran <ralipran@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:27:57 by ralipran          #+#    #+#             */
-/*   Updated: 2024/10/31 16:59:15 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:45:01 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_write(char c, int *count)
 }
 
 void	ft_putnbr_base(unsigned long int n,
-	char *str_base, int base, int *count)
+	const char *str_base, int base, int *count)
 {
 	if (n >= (unsigned long int)base)
 		ft_putnbr_base(n / base, str_base, base, count);
@@ -38,7 +38,7 @@ void	ft_putnbr(long nb, int *count)
 {
 	if (nb == INT_MIN)
 	{
-		ft_write("-2147483648", count);
+		ft_putstr("-2147483648", count);
 		return ;
 	}
 	if (nb < 0)
