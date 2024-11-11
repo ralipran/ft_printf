@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralipran <ralipran@>                       +#+  +:+       +#+        */
+/*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 23:02:17 by ralipran          #+#    #+#             */
-/*   Updated: 2024/11/05 16:43:48 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:26:15 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@ void	ft_putchar(char c, int *count)
 {
 	ft_write(c, count);
 }
-
-/*
- *	#include<stdint.h>
- *
- * 	void		*ptr;
- * 	uintptr_t	ptr_as_nbr;
- *
- * 	ptr_as_nbr = (uintptr_t) ptr;
- */
 
 void	ft_read_flag(const char *str, va_list args, int *count)
 {
@@ -37,7 +28,7 @@ void	ft_read_flag(const char *str, va_list args, int *count)
 		}
 		else
 			ft_write(*str, count);
-			str++;
+		str++;
 	}
 }
 

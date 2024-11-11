@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_fonx_supp.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralipran <ralipran@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: ralipran <ralipran@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:27:57 by ralipran          #+#    #+#             */
-/*   Updated: 2024/11/05 16:45:01 by ralipran         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:26:20 by ralipran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
